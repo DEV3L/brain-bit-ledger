@@ -17,40 +17,34 @@ class App extends Component {
         this.googleAnalytics = new GoogleAnalytics();
     }
 
-  render() {
-      /*
-      if (this.state.loading === true) {
-          return (
-              <div style={{textAlign: "center", position: "absolute", top: "25%", left: "50%"}}>
-                  <h3>Loading</h3>
-                  <Spinner/>
-              </div>
-          )
-      }
-       */
+    render() {
+        /*
+        if (this.state.loading === true) {
+            return (
+                <div style={{textAlign: "center", position: "absolute", top: "25%", left: "50%"}}>
+                    <h3>Loading</h3>
+                    <Spinner/>
+                </div>
+            )
+        }
+         */
 
 
-    return (
-      <div className="App">
-          <BrowserRouter>
-              <Analytics id={this.googleAnalytics.gaTrackingNumber} debug>
-                  <div>
-                      <div className="main-content" style={{padding: "1em"}}>
-                          <div className="workspace">
-                              <Route exact path="/login" render={(props) => {
-                                  return <Login {...props} />
-                              }}/>
-                              <AuthenticatedRoute exact path="/"
-                                                  authenticated={true}
-                                                  component={Login}/>
-                          </div>
-                      </div>
-                  </div>
-              </Analytics>
-          </BrowserRouter>
-      </div>
-    );
-  }
+        return (
+            <BrowserRouter>
+                <Analytics id={this.googleAnalytics.gaTrackingNumber} debug>
+                    <div>
+                        <Route exact path="/login" render={(props) => {
+                            return <Login {...props} />
+                        }}/>
+                        <AuthenticatedRoute exact path="/"
+                                            authenticated={true}
+                                            component={Login}/>
+                    </div>
+                </Analytics>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;

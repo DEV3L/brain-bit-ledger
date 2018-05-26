@@ -50,7 +50,7 @@ yarn start
 - [Add React to a New Application](https://reactjs.org/docs/add-react-to-a-new-app.html)
 - [Netlify Continuous Deployment](https://www.netlify.com/docs/continuous-deployment/)
 ![netlify deployment configuration](https://image.ibb.co/iXWbVo/Screen_Shot_2018_05_26_at_3_46_04_PM.png)
-
+- [Bootstrap Login Template](https://bootsnipp.com/snippets/dldxB)
 ## Recommended Dev Tools
 - [WebStorm](https://www.jetbrains.com/webstorm/)
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)

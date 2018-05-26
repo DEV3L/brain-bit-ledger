@@ -2,15 +2,9 @@ import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import {app, facebookProvider} from "../../base";
 
+import './Login.css'
+import brainBitLogo from '../../static/brain_bit_logo.jpg'
 
-const loginStyles = {
-    width: "90%",
-    maxWidth: "315px",
-    margin: "20px auto",
-    border: "1px solid #ddd",
-    borderRadius: "5px",
-    padding: "10px"
-};
 
 class Login extends Component {
     constructor(props) {
@@ -80,8 +74,8 @@ class Login extends Component {
             return <Redirect to={from}/>
         }
 
-        return (
-            <div style={loginStyles}>
+        const originalLogin = (
+            <div>
                 {/*<Toaster ref={(element) => {*/}
                 {/*this.toaster = element;*/}
                 {/*}}/>*/}
@@ -120,6 +114,30 @@ class Login extends Component {
                 </form>
             </div>
         );
+
+        const loginTemplate = (
+            <div className="container-fluid height-full wrapper fadeInDown">
+                <div id="formContent">
+                    <div className="fadeIn first">
+                        <img src={brainBitLogo} id="icon" alt="User Icon"/>
+                    </div>
+                    <form>
+                        <input type="text" id="login" className="rounded fadeIn second" name="login"
+                               placeholder="login"/>
+                        <input type="text" id="password" className="rounded fadeIn third" name="login"
+                               placeholder="password"/>
+                        <input type="submit" className="rounded fadeIn fourth" value="Log In"/>
+                    </form>
+                    <div id="formFooter">
+                        <a className="underlineHover" href="#">Forgot Password?</a>
+                    </div>
+
+                </div>
+            </div>
+        );
+
+        return loginTemplate;
+
     }
 }
 

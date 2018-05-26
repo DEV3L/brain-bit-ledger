@@ -3,9 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/app-types": "0.x",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.10",
+    "moment-es6": "^1.0.0",
+    "re-base": "^3.2.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-ga": "^2.5.3",
+    "react-hotjar": "^1.0.11",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-ga": "^1.0.0",
+    "react-scripts": "1.1.4",
+    "react-toastify": "^4.0.1",
+    "reactstrap": "^6.0.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

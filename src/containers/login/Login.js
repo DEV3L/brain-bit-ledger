@@ -1,71 +1,71 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
-import {app, facebookProvider} from "../../base";
-
 import './Login.css'
 import brainBitLogo from '../../static/brain_bit_logo.jpg'
+
+// import {app, facebookProvider} from "../../base";
 
 
 class Login extends Component {
     constructor(props) {
         super(props);
-        this.authWithFacebook = this.authWithFacebook.bind(this);
-        this.authWithEmailPassword = this.authWithEmailPassword.bind(this);
+        // this.authWithFacebook = this.authWithFacebook.bind(this);
+        // this.authWithEmailPassword = this.authWithEmailPassword.bind(this);
 
         this.state = {
             redirect: false
         };
     }
 
-    authWithFacebook() {
-        console.log("authenticated with facebook");
-
-        app.auth().signInWithPopup(facebookProvider)
-            .then((user, error) => {
-                if (error) {
-                    // this.toaster.show({intent: Intent.DANGER, message: "Unable to sign in with Facebook"})
-                } else {
-                    this.props.setCurrentUser(user);
-                    this.setState({redirect: true})
-                }
-            });
-    }
-
-    authWithEmailPassword(event) {
-        event.preventDefault();
-        console.table([{
-            email: this.emailInput.value,
-            password: this.passwordInput.value
-        }]);
-
-        const email = this.emailInput.value;
-        const password = this.passwordInput.value;
-
-        app.auth().fetchProvidersForEmail(email)
-            .then((providers) => {
-                if (providers.length === 0) {
-                    // create user
-                    return app.auth().createUserWithEmailAndPassword(email, password);
-                } else if (providers.indexOf("password") === -1) {
-                    // previously used facebook
-                    this.loginForm.reset();
-                    // this.toaster.show({intent: Intent.WARNING, message: "Try alternative login"})
-                } else {
-                    // sign in
-                    return app.auth().signInWithEmailAndPassword(email, password);
-                }
-            })
-            .then((user) => {
-                if (user && user.email) {
-                    this.loginForm.reset();
-                    this.props.setCurrentUser(user);
-                    this.setState({redirect: true})
-                }
-            })
-            .catch((error) => {
-                // this.toaster.show({intent: Intent.DANGER, message: error.message})
-            })
-    }
+    // authWithFacebook() {
+    //     console.log("authenticated with facebook");
+    //
+    //     app.auth().signInWithPopup(facebookProvider)
+    //         .then((user, error) => {
+    //             if (error) {
+    //                 // this.toaster.show({intent: Intent.DANGER, message: "Unable to sign in with Facebook"})
+    //             } else {
+    //                 this.props.setCurrentUser(user);
+    //                 this.setState({redirect: true})
+    //             }
+    //         });
+    // }
+    //
+    // authWithEmailPassword(event) {
+    //     event.preventDefault();
+    //     console.table([{
+    //         email: this.emailInput.value,
+    //         password: this.passwordInput.value
+    //     }]);
+    //
+    //     const email = this.emailInput.value;
+    //     const password = this.passwordInput.value;
+    //
+    //     app.auth().fetchProvidersForEmail(email)
+    //         .then((providers) => {
+    //             if (providers.length === 0) {
+    //                 // create user
+    //                 return app.auth().createUserWithEmailAndPassword(email, password);
+    //             } else if (providers.indexOf("password") === -1) {
+    //                 // previously used facebook
+    //                 this.loginForm.reset();
+    //                 // this.toaster.show({intent: Intent.WARNING, message: "Try alternative login"})
+    //             } else {
+    //                 // sign in
+    //                 return app.auth().signInWithEmailAndPassword(email, password);
+    //             }
+    //         })
+    //         .then((user) => {
+    //             if (user && user.email) {
+    //                 this.loginForm.reset();
+    //                 this.props.setCurrentUser(user);
+    //                 this.setState({redirect: true})
+    //             }
+    //         })
+    //         .catch((error) => {
+    //             // this.toaster.show({intent: Intent.DANGER, message: error.message})
+    //         })
+    // }
 
     render() {
         const {from} = this.props.location.state || {from: {pathname: '/'}};
@@ -74,11 +74,9 @@ class Login extends Component {
             return <Redirect to={from}/>
         }
 
+        /*
         const originalLogin = (
             <div>
-                {/*<Toaster ref={(element) => {*/}
-                {/*this.toaster = element;*/}
-                {/*}}/>*/}
                 <button style={{width: "100%"}} className="pt-button pt-intent-primary"
                         onClick={() => {
                             this.authWithFacebook()
@@ -114,6 +112,7 @@ class Login extends Component {
                 </form>
             </div>
         );
+        */
 
         const loginTemplate = (
             <div className="container-fluid height-full wrapper fadeInDown">

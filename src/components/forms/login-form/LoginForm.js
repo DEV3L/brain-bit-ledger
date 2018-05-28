@@ -22,11 +22,18 @@ class LoginForm extends React.Component {
             </div>
             <form>
                 <Input type="text" id="login" value={this.props.login} className="rounded fadeIn second" name="login"
-                       placeholder="login" onChange={(login) => {
-                    this.setState({login})
-                }}/>
-                <Input type="text" id="password" className="rounded fadeIn third" name="login"
-                       placeholder="password"/>
+                       placeholder="login"
+                       onChange={(login) => {
+                           this.setState({login})
+                       }}
+                />
+                <Input type="text" id="password" value={this.props.password} className="rounded fadeIn third"
+                       name="password"
+                       placeholder="password"
+                       onChange={(password) => {
+                           this.setState({password})
+                       }}
+                />
                 <input type="submit" className="rounded fadeIn fourth" value="Log In"/>
             </form>
             <div id="formFooter">

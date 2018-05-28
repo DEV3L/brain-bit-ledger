@@ -1,9 +1,4 @@
 describe("Base", () => {
-    let env;
-
-    beforeEach(() => {
-    });
-
     afterEach(() => {
         jest.resetModules()
     });
@@ -18,36 +13,21 @@ describe("Base", () => {
         firebase.apps = [1];
 
         let mockAuth = jest.fn();
+        let authReturnValue = 'auth';
+        mockAuth.mockReturnValueOnce(authReturnValue);
         firebase.auth = mockAuth;
 
         let auth = require("./base");
 
         expect(mockAuth.mock.calls.length).toBe(1);
+        expect(auth).toEqual({"auth": authReturnValue})
     });
 
-    test("firebase initializeApp called if app not initialized", () => {
+    test("firebase initializeApp called with firebase environment variables", () => {
         const firebase = require('firebase');
         jest.mock('firebase');
 
-        firebase.initializeApp = (config) => {
-            throw "Should be hit in test"
-        };
-        firebase.apps = [];
-
-        try {
-            require("./base");
-        }
-        catch (e) {
-            expect(e).toBe("Should be hit in test")
-        }
-    });
-
-    test("firebase initializeApp called with environment variables", () => {
-        const firebase = require('firebase');
-        jest.mock('firebase');
-
-        env = process.env;
-
+        const env = process.env;
         process.env = {
             REACT_APP_FIREBASE_KEY: 'key',
             REACT_APP_FIREBASE_DOMAIN: 'domain',
@@ -66,7 +46,6 @@ describe("Base", () => {
             storageBucket: 'bucket',
             messagingSenderId: 'sender'
         };
-
 
         let mockInitializeApp = jest.fn();
         firebase.initializeApp = mockInitializeApp;

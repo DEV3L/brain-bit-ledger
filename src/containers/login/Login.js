@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
+import FadeIn from '../../components/animations/fade-in/FadeIn'
 import './Login.css'
-import brainBitLogo from '../../static/brain_bit_logo.jpg'
+import brainBitLogo from '../../static/brain_bit_logo.png'
 
 // import {app, facebookProvider} from "../../base";
 
@@ -13,6 +14,7 @@ class Login extends Component {
         // this.authWithEmailPassword = this.authWithEmailPassword.bind(this);
 
         this.state = {
+            login: '',
             redirect: false
         };
     }
@@ -114,29 +116,43 @@ class Login extends Component {
         );
         */
 
-        const loginTemplate = (
-            <div className="container-fluid height-full wrapper fadeInDown">
-                <div id="formContent">
-                    <div className="fadeIn first">
-                        <img src={brainBitLogo} id="icon" alt="User Icon"/>
-                    </div>
-                    <form>
-                        <input type="text" id="login" className="rounded fadeIn second" name="login"
-                               placeholder="login"/>
-                        <input type="text" id="password" className="rounded fadeIn third" name="login"
-                               placeholder="password"/>
-                        <input type="submit" className="rounded fadeIn fourth" value="Log In"/>
-                    </form>
-                    <div id="formFooter">
-                        <a className="underlineHover" href="#">Forgot Password?</a>
-                    </div>
+        return <FadeIn component={() => <LoginForm login={this.state.login}/>}/>;
 
-                </div>
-            </div>
+    }
+}
+
+class IconAdder extends React.Component {
+    render() {
+        const {tag, onClick, children, ...rest} = this.props;
+        const Tag = tag;
+
+        return (
+            <Tag onClick={onClick} {...rest}>
+                {" "}
+                {children}
+            </Tag>
         );
+    }
+}
 
-        return loginTemplate;
-
+class LoginForm extends React.Component {
+    render = () => {
+        const {login} = this.props;
+        return <div id="formContent">
+            <div className="fadeIn first">
+                <img src={brainBitLogo} id="icon" alt="brand icon"/>
+            </div>
+            <form>
+                <input type="text" id="login" value={this.props.login} className="rounded fadeIn second" name="login"
+                       placeholder="login"/>
+                <input type="text" id="password" className="rounded fadeIn third" name="login"
+                       placeholder="password"/>
+                <input type="submit" className="rounded fadeIn fourth" value="Log In"/>
+            </form>
+            <div id="formFooter">
+                <a className="underlineHover" href="#">Forgot Password?</a>
+            </div>
+        </div>
     }
 }
 

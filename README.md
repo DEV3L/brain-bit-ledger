@@ -41,16 +41,23 @@ yarn start
 
 
 ## Milestones
-01. *Project Inception:* 2018-05-22
-02. *Hosted on Netlify* 2018-05-26
-    - sdf
+01. **20180522**: Project Inception 
+02. **20180526**: Hosted on Netlify
+    - [Brain Bit - Ledger](https://brain-bit-ledger.netlify.com/)
+03. **20180527**: Login page with logo added
 
 ## References
 - [CoderJourney Learn React Video Tutorials](https://www.youtube.com/playlist?list=PLbG4OyfwIxjFKJE_ZVZxsSt1ESc9S7kFb)
+
 - [Add React to a New Application](https://reactjs.org/docs/add-react-to-a-new-app.html)
 - [Netlify Continuous Deployment](https://www.netlify.com/docs/continuous-deployment/)
 ![netlify deployment configuration](https://image.ibb.co/iXWbVo/Screen_Shot_2018_05_26_at_3_46_04_PM.png)
 - [Bootstrap Login Template](https://bootsnipp.com/snippets/dldxB)
+
+
+## Interesting Components
+- [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar)
+- [AnimakitRotator](https://animakit.github.io/#/)
 ## Recommended Dev Tools
 - [WebStorm](https://www.jetbrains.com/webstorm/)
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)

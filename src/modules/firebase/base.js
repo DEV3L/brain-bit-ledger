@@ -1,4 +1,3 @@
-import Rebase from 're-base'
 import firebase from 'firebase';
 
 const config = {
@@ -10,10 +9,10 @@ const config = {
     messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID
 };
 
-const app = firebase.initializeApp(config);
-const base = Rebase.createClass(app.database());
+if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+}
 
-const facebookProvider = new firebase.auth.FacebookAuthProvider();
+const auth = firebase.auth();
 
-
-export {app, base, facebookProvider}
+export {auth}

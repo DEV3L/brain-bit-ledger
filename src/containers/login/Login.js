@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
-import FadeIn from '../../components/animations/fade-in/FadeIn'
+
+import FadeInDownContainer from '../../components/animations/fade-in-down-container/FadeInDownContainer'
+import LoginForm from '../../components/forms/login-form/LoginForm'
+
+
 import './Login.css'
-import brainBitLogo from '../../static/brain_bit_logo.png'
 
 // import {app, facebookProvider} from "../../base";
 
@@ -116,7 +119,12 @@ class Login extends Component {
         );
         */
 
-        return <FadeIn component={() => <LoginForm login={this.state.login}/>}/>;
+        return <FadeInDownContainer component={() =>
+            <LoginForm
+                login={this.state.login}
+                password={this.state.password}
+            />
+        }/>;
 
     }
 }
@@ -135,25 +143,5 @@ class IconAdder extends React.Component {
     }
 }
 
-class LoginForm extends React.Component {
-    render = () => {
-        const {login} = this.props;
-        return <div id="formContent">
-            <div className="fadeIn first">
-                <img src={brainBitLogo} id="icon" alt="brand icon"/>
-            </div>
-            <form>
-                <input type="text" id="login" value={this.props.login} className="rounded fadeIn second" name="login"
-                       placeholder="login"/>
-                <input type="text" id="password" className="rounded fadeIn third" name="login"
-                       placeholder="password"/>
-                <input type="submit" className="rounded fadeIn fourth" value="Log In"/>
-            </form>
-            <div id="formFooter">
-                <a className="underlineHover" href="#">Forgot Password?</a>
-            </div>
-        </div>
-    }
-}
 
 export default Login;

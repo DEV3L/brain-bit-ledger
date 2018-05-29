@@ -1,8 +1,9 @@
 import React from "react";
 
-import Input from '../../../components/widgets/input/Input'
+import {Col} from 'reactstrap'
 
-import brainBitLogo from '../../../static/brain_bit_logo.png'
+import BrandLogo from '../../../components/widgets/brand-logo/BrandLogo'
+import Input from '../../../components/widgets/input/Input'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -17,25 +18,28 @@ class LoginForm extends React.Component {
     render = () => {
         const {login} = this.props;
         return <div id="formContent">
-            <div className="my-2 fadeIn first">
-                <img src={brainBitLogo} id="icon" alt="brand icon"/>
-            </div>
-            <form>
-                <Input type="text" id="login" value={this.props.login} className="rounded fadeIn second" name="login"
+            <BrandLogo className='my-4 fadeIn first'/>
+            <Col md={11} className="container-fluid">
+                <Input id="login"
+                       type="text"
+                       value={this.props.login}
+                       className="mb-3 px-2 py-3 rounded border-0 fadeIn second"
                        placeholder="login"
                        onChange={(login) => {
                            this.setState({login})
                        }}
                 />
-                <Input type="text" id="password" value={this.props.password} className="rounded fadeIn third"
-                       name="password"
+                <Input id="password"
+                       type="password"
+                       value={this.props.password}
+                       className="mb-3 px-2 py-3 rounded border-0 fadeIn third"
                        placeholder="password"
                        onChange={(password) => {
                            this.setState({password})
                        }}
                 />
                 <input type="submit" className="rounded fadeIn fourth" value="Log In"/>
-            </form>
+            </Col>
             <div id="formFooter">
                 <a className="underlineHover" href="#">Forgot Password?</a>
             </div>

@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
                 <Input id="login"
                        type="text"
                        value={this.props.login}
-                       className="mb-3 px-2 py-3 rounded border-0 fadeIn second"
+                       className="mb-3 px-4 py-3 rounded border-0 fadeIn second"
                        placeholder="login"
                        onChange={(login) => {
                            this.setState({login})
@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
                 <Input id="password"
                        type="password"
                        value={this.props.password}
-                       className="mb-3 px-2 py-3 rounded border-0 fadeIn third"
+                       className="mb-3 px-4 py-3 rounded border-0 fadeIn third"
                        placeholder="password"
                        onChange={(password) => {
                            this.setState({password})

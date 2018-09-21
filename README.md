@@ -45,10 +45,11 @@ yarn start
 02. **20180526**: Hosted on Netlify
     - [Brain Bit - Ledger](https://brain-bit-ledger.netlify.com/)
 03. **20180527**: Login page with logo added
+04. **20180921**: Kick the dust off the project and push up previously prending changes
+
 
 ## References
 - [CoderJourney Learn React Video Tutorials](https://www.youtube.com/playlist?list=PLbG4OyfwIxjFKJE_ZVZxsSt1ESc9S7kFb)
-
 - [Add React to a New Application](https://reactjs.org/docs/add-react-to-a-new-app.html)
 - [Netlify Continuous Deployment](https://www.netlify.com/docs/continuous-deployment/)
 ![netlify deployment configuration](https://image.ibb.co/iXWbVo/Screen_Shot_2018_05_26_at_3_46_04_PM.png)
@@ -58,7 +59,12 @@ yarn start
 ## Interesting Components
 - [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar)
 - [AnimakitRotator](https://animakit.github.io/#/)
+- [react-auth-firebase](https://www.npmjs.com/package/react-auth-firebase_)
+  - [react-auth-firebase sandbox](https://codesandbox.io/s/v6w6r6521y)
+
+
 ## Recommended Dev Tools
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [WebStorm](https://www.jetbrains.com/webstorm/)
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - ... [Vim](https://www.youtube.com/watch?v=dQw4w9WgXcQ)

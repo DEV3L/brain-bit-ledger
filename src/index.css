@@ -7,3 +7,12 @@ body {
 .height-full {
     height: 100vh;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+.mp-0 {
+    margin: 0;
+    padding: 0;
+}

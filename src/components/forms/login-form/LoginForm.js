@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
   }
 
   render = () => {
-    const { login } = this.props;
+    const { login, signInWithGoogle } = this.props;
     return (
       <div id="formContent">
         <BrandLogo className="my-3 fadeIn first" />
@@ -60,7 +60,7 @@ class LoginForm extends React.Component {
               <img className="m-auto" src={github_auth_icon} style={{ width: 35 }} />
             </div>
             <div className="mx-2 my-0 p-2 border rounded-circle shadow pointer Login-icon-animation">
-              <img className="m-auto" src={google_auth_icon} style={{ width: 35 }} />
+              <img onClick={signInWithGoogle} className="m-auto" src={google_auth_icon} style={{ width: 35 }} />
             </div>
             <div className="mx-2 my-0 p-2 border rounded-circle shadow pointer Login-icon-animation">
               <img className="m-auto" src={twitter_auth_icon} style={{ width: 35 }} />

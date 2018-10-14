@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import withFirebaseAuth from 'react-auth-firebase';
 import { Redirect } from 'react-router-dom';
-
-import FadeInDownContainer from '../../components/animations/fade-in-down-container/FadeInDownContainer';
-import LoginForm from '../../components/forms/login-form/LoginForm';
+import { Col, Row } from 'reactstrap';
 
 import firebase, { authConfig } from '../../daos/firebase';
 
-import './Login.css';
+import './Dashboard.css';
 
-class Login extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,23 +32,12 @@ class Login extends Component {
       error,
       signOut
     } = this.props;
-
-    const { from } = this.props.location.state || { from: { pathname: '/' } };
-    console.log('>>>>>> FROM: ');
-    console.log(from);
-
-    console.log('<<<<<<<<<< USER');
     console.log(user);
-    if (!!user) {
-      return <Redirect to={from} />;
-    }
 
     return (
-      <FadeInDownContainer
-        component={() => (
-          <LoginForm signInWithGoogle={signInWithGoogle} login={this.state.login} password={this.state.password} />
-        )}
-      />
+      <Col md={10} className="container-fluid">
+        <h1>Here!</h1>
+      </Col>
     );
   }
 }
@@ -69,4 +56,4 @@ class IconAdder extends React.Component {
   }
 }
 
-export default withFirebaseAuth(Login, firebase, authConfig);
+export default withFirebaseAuth(Dashboard, firebase, authConfig);

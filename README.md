@@ -10,12 +10,12 @@ Ledger based application to visualize knowledge consumption velocity (kcv)
 
 **Firebase**
 ```
-REACT_APP_FIREBASE_KEY
-REACT_APP_FIREBASE_DOMAIN
-REACT_APP_FIREBASE_DATABASE
+REACT_APP_FIREBASE_API_KEY
+REACT_APP_FIREBASE_AUTH_DOMAIN
+REACT_APP_FIREBASE_DATABASE_URL
 REACT_APP_FIREBASE_PROJECT_ID
 REACT_APP_FIREBASE_STORAGE_BUCKET
-REACT_APP_FIREBASE_SENDER_ID
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID
 ```
 ![firebase](https://image.ibb.co/maGOnS/image.png)
 
@@ -46,6 +46,7 @@ yarn start
     - [Brain Bit - Ledger](https://brain-bit-ledger.netlify.com/)
 03. **20180527**: Login page with logo added
 04. **20180921**: Kick the dust off the project and push up previously prending changes
+05. **20181014**: Setup authentication with Google using react-auth-firebase
 
 
 ## References
@@ -69,6 +70,10 @@ yarn start
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 - ... [Vim](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
+
+## Using Visual Studio Code
+### Interactive Debugging React JavaScript
+The launch configuration for the project is checked in!
 
 ## Using WebStorm
 ### Interactive Debugging React JavaScript

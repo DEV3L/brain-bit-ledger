@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-
+import classNames from 'classnames';
 import withFirebaseAuth from 'react-auth-firebase';
-import { Redirect } from 'react-router-dom';
+import withStyles from '@material-ui/core/styles/withStyles';
 import { Col, Row } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
+
 import Badge from '../../components/material-kit/Badge/Badge';
+import GridContainer from '../../components/material-kit/Grid/GridContainer';
+import GridItem from '../../components/material-kit/Grid/GridItem';
+import Header from '../../components/material-kit/Header/Header';
+import HeaderLinks from '../../components/material-kit/Header/HeaderLinks';
+import Parallax from '../../components/material-kit/Parallax/Parallax';
 
 import firebase, { authConfig } from '../../daos/firebase';
 import componentsStyle from '../../components/material-kit/material-kit-react/views/components.js';
 
 import './Dashboard.css';
+
+import bg4 from '../../assets/img/bg4.jpg';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -35,24 +43,39 @@ class Dashboard extends Component {
       twitterSecret,
       user,
       error,
-      signOut
+      signOut,
+      ...rest
     } = this.props;
     console.log(user);
 
     return (
-      <Col md={10} className="container-fluid">
-        <h1>Here!</h1>
-        <div className={classes.title}>
-          <h3>Badges</h3>
+      <div>
+        <Header
+          brand="Brain Bit Ledger"
+          rightLinks={<HeaderLinks />}
+          color="dark"
+          changeColorOnScroll={{
+            height: 400,
+            color: 'black'
+          }}
+          {...rest}
+        />
+        <div style={{ height: 50 }} />
+
+        <div className={classNames(classes.main, classes.mainRaised)}>
+          <div className={classes.title}>
+            <h3>Badges</h3>
+          </div>
+          <Badge>default</Badge>
+          <Badge color="primary">primary</Badge>
+          <Badge color="info">info</Badge>
+          <Badge color="success">success</Badge>
+          <Badge color="warning">warning</Badge>
+          <Badge color="danger">danger</Badge>
+          <Badge color="rose">rose</Badge>
+          <h1 style={{ height: 900 }}>Here!</h1>
         </div>
-        <Badge>default</Badge>
-        <Badge color="primary">primary</Badge>
-        <Badge color="info">info</Badge>
-        <Badge color="success">success</Badge>
-        <Badge color="warning">warning</Badge>
-        <Badge color="danger">danger</Badge>
-        <Badge color="rose">rose</Badge>
-      </Col>
+      </div>
     );
   }
 }

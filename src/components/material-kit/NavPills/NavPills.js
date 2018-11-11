@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from 'classnames';
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
+import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from 'components/Grid/GridContainer.js';
+import GridItem from 'components/Grid/GridItem.js';
 
-import navPillsStyle from "../../material-kit-react/components/navPillsStyle.js";
+import navPillsStyle from '../material-kit-react/components/navPillsStyle.js';
 
 class NavPills extends React.Component {
   constructor(props) {
@@ -30,14 +30,7 @@ class NavPills extends React.Component {
     this.setState({ active: index });
   };
   render() {
-    const {
-      classes,
-      tabs,
-      direction,
-      color,
-      horizontal,
-      alignCenter
-    } = this.props;
+    const { classes, tabs, direction, color, horizontal, alignCenter } = this.props;
     const flexContainerClasses = classNames({
       [classes.flexContainer]: true,
       [classes.horizontalDisplay]: horizontal !== undefined
@@ -57,7 +50,7 @@ class NavPills extends React.Component {
         {tabs.map((prop, key) => {
           var icon = {};
           if (prop.tabIcon !== undefined) {
-            icon["icon"] = <prop.tabIcon className={classes.tabIcon} />;
+            icon['icon'] = <prop.tabIcon className={classes.tabIcon} />;
           }
           const pillsClasses = classNames({
             [classes.pills]: true,
@@ -83,7 +76,7 @@ class NavPills extends React.Component {
     const tabContent = (
       <div className={classes.contentWrapper}>
         <SwipeableViews
-          axis={direction === "rtl" ? "x-reverse" : "x"}
+          axis={direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.active}
           onChangeIndex={this.handleChangeIndex}
         >
@@ -113,7 +106,7 @@ class NavPills extends React.Component {
 
 NavPills.defaultProps = {
   active: 0,
-  color: "primary"
+  color: 'primary'
 };
 
 NavPills.propTypes = {
@@ -127,14 +120,7 @@ NavPills.propTypes = {
       tabContent: PropTypes.node
     })
   ).isRequired,
-  color: PropTypes.oneOf([
-    "primary",
-    "warning",
-    "danger",
-    "success",
-    "info",
-    "rose"
-  ]),
+  color: PropTypes.oneOf(['primary', 'warning', 'danger', 'success', 'info', 'rose']),
   direction: PropTypes.string,
   horizontal: PropTypes.shape({
     tabsGrid: PropTypes.object,

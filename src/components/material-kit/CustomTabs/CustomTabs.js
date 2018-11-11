@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from 'classnames';
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 // material-ui components
-import withStyles from "@material-ui/core/styles/withStyles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Icon from "@material-ui/core/Icon";
+import withStyles from '@material-ui/core/styles/withStyles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Icon from '@material-ui/core/Icon';
 // core components
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
+import Card from 'components/Card/Card.js';
+import CardBody from 'components/Card/CardBody.js';
+import CardHeader from 'components/Card/CardHeader.js';
 
-import customTabsStyle from "../../material-kit-react/components/customTabsStyle.js";
+import customTabsStyle from '../material-kit-react/components/customTabsStyle.js';
 
 class CustomTabs extends React.Component {
   state = {
@@ -26,14 +26,7 @@ class CustomTabs extends React.Component {
   };
 
   render() {
-    const {
-      classes,
-      headerColor,
-      plainTabs,
-      tabs,
-      title,
-      rtlActive
-    } = this.props;
+    const { classes, headerColor, plainTabs, tabs, title, rtlActive } = this.props;
     const cardTitle = classNames({
       [classes.cardTitle]: true,
       [classes.cardTitleRTL]: rtlActive
@@ -41,9 +34,7 @@ class CustomTabs extends React.Component {
     return (
       <Card plain={plainTabs}>
         <CardHeader color={headerColor} plain={plainTabs}>
-          {title !== undefined ? (
-            <div className={cardTitle}>{title}</div>
-          ) : null}
+          {title !== undefined ? <div className={cardTitle}>{title}</div> : null}
           <Tabs
             value={this.state.value}
             onChange={this.handleChange}
@@ -56,12 +47,7 @@ class CustomTabs extends React.Component {
               var icon = {};
               if (prop.tabIcon) {
                 icon = {
-                  icon:
-                    typeof prop.tabIcon === "string" ? (
-                      <Icon>{prop.tabIcon}</Icon>
-                    ) : (
-                      <prop.tabIcon />
-                    )
+                  icon: typeof prop.tabIcon === 'string' ? <Icon>{prop.tabIcon}</Icon> : <prop.tabIcon />
                 };
               }
               return (
@@ -96,14 +82,7 @@ class CustomTabs extends React.Component {
 
 CustomTabs.propTypes = {
   classes: PropTypes.object.isRequired,
-  headerColor: PropTypes.oneOf([
-    "warning",
-    "success",
-    "danger",
-    "info",
-    "primary",
-    "rose"
-  ]),
+  headerColor: PropTypes.oneOf(['warning', 'success', 'danger', 'info', 'primary', 'rose']),
   title: PropTypes.string,
   tabs: PropTypes.arrayOf(
     PropTypes.shape({

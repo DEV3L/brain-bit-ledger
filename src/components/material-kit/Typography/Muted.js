@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import typographyStyle from "../../material-kit-react/components/typographyStyle.js";
+import typographyStyle from "../material-kit-react/components/typographyStyle.js";
 
 function Muted({ ...props }) {
   const { classes, children } = props;

@@ -15,6 +15,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Menu from '@material-ui/icons/Menu';
 // core components
 import headerStyle from './headerStyle.js';
+import logo from '../../static/brain_bit_brain.png';
 
 class Header extends React.Component {
   constructor(props) {
@@ -57,10 +58,15 @@ class Header extends React.Component {
       [classes.absolute]: absolute,
       [classes.fixed]: fixed,
     });
-    const brandComponent = <Button className={classes.title}>{brand}</Button>;
+    const brandComponent = (
+      <Button className={classes.title}>
+        <img style={{ height: 40, padding: '0px 15px 0px 0px' }} src={logo} />
+        {brand}
+      </Button>
+    );
     return (
       <AppBar className={appBarClasses}>
-        <Toolbar className={classes.container}>
+        <Toolbar style={{ maxWidth: '98%' }} className={classes.container}>
           {leftLinks !== undefined ? brandComponent : null}
           <div className={classes.flex}>
             {leftLinks !== undefined ? (

@@ -50,18 +50,9 @@ class Dashboard extends Component {
     console.log(user);
 
     return (
-      <div>
-        <Header
-          color="dark"
-          brand="Brain Bit Ledger"
-          rightLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 200,
-            color: 'rose',
-          }}
-          {...rest}
-        />
+      <div style={{ background: 'linear-gradient(to bottom, #222222, #56baf2)' }}>
+        <Header height={100} color="dark" brand="Brain Bit Ledger" rightLinks={<HeaderLinks />} fixed {...rest} />
+        <Header height={100} color="dark" brand="Brain Bit Ledger" rightLinks={<HeaderLinks />} fixed {...rest} />
         <Parallax image={brain_nodes}>
           <div className={classes.container}>
             <GridContainer>

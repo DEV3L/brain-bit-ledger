@@ -52,6 +52,7 @@ const headerStyle = {
   },
   title: {
     ...defaultFont,
+    padding: '10px 0px',
     lineHeight: '30px',
     fontSize: '18px',
     borderRadius: '3px',
@@ -103,7 +104,7 @@ const headerStyle = {
   },
   dark: {
     color: '#FFFFFF',
-    backgroundColor: '#56BAF2 !important',
+    backgroundColor: '#212121 !important',
     boxShadow: '0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)',
   },
   white: {

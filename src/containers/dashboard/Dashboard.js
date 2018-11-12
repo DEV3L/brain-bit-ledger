@@ -5,19 +5,20 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import { Col, Row } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 
+import Parallax from '../../components/parallax/Parallax';
+import Header from '../../components/header/Header';
+import HeaderLinks from '../../components/header/HeaderLinks';
+
 import Badge from '../../components/material-kit/Badge/Badge';
 import GridContainer from '../../components/material-kit/Grid/GridContainer';
 import GridItem from '../../components/material-kit/Grid/GridItem';
-import Header from '../../components/material-kit/Header/Header';
-import HeaderLinks from '../../components/material-kit/Header/HeaderLinks';
-import Parallax from '../../components/material-kit/Parallax/Parallax';
 
 import firebase, { authConfig } from '../../daos/firebase';
 import componentsStyle from '../../components/material-kit/material-kit-react/views/components.js';
 
 import './Dashboard.css';
 
-import bg4 from '../../assets/img/bg4.jpg';
+import brain_nodes from '../../assets/img/brain_nodes.png';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -51,16 +52,30 @@ class Dashboard extends Component {
     return (
       <div>
         <Header
+          color="dark"
           brand="Brain Bit Ledger"
           rightLinks={<HeaderLinks />}
-          color="dark"
+          fixed
           changeColorOnScroll={{
-            height: 400,
-            color: 'black'
+            height: 200,
+            color: 'rose'
           }}
           {...rest}
         />
-        <div style={{ height: 50 }} />
+        <Parallax image={brain_nodes}>
+          <div className={classes.container}>
+            <GridContainer>
+              <GridItem>
+                <div className={classes.brand}>
+                  <h3 className={classes.title}>
+                    Brain Bit <span className="small">- Professional Knowledge Tracking</span>
+                  </h3>
+                  <h5 className={classes.subtitle}>A hub to track the various forms of your professioal growth.</h5>
+                </div>
+              </GridItem>
+            </GridContainer>
+          </div>
+        </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.title}>

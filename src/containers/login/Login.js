@@ -14,7 +14,7 @@ class Login extends Component {
     super(props);
     this.state = {
       login: '',
-      redirect: false
+      redirect: false,
     };
   }
 
@@ -32,7 +32,7 @@ class Login extends Component {
       twitterSecret,
       user,
       error,
-      signOut
+      signOut,
     } = this.props;
 
     const { from } = this.props.location.state || { from: { pathname: '/' } };

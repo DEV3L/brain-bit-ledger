@@ -1,18 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import './FadeInDownContainer.css'
+import './FadeInDownContainer.css';
 
 class SlideDown extends React.Component {
-    render() {
-        const {component: Component, children, ...rest} = this.props;
+  render() {
+    const { component: Component, children, ...rest } = this.props;
 
-        return (
-            <div className="container-fluid height-full wrapper FadeInDownContainer-fadeInDown">
-                <Component {...rest}>{children}</Component>
-            </div>
-        );
-    }
+    return (
+      <div className="container-fluid height-full wrapper FadeInDownContainer-fadeInDown">
+        <Component {...rest}>{children}</Component>
+      </div>
+    );
+  }
 }
 
-export default SlideDown
-
+export default SlideDown;

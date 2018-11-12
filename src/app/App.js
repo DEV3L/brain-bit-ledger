@@ -37,7 +37,7 @@ class App extends Component {
       twitterSecret,
       user,
       error,
-      signOut
+      signOut,
     } = this.props;
 
     const isAuthenticated = !!user;

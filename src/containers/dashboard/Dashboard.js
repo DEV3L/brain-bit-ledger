@@ -25,7 +25,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       login: '',
-      redirect: false
+      redirect: false,
     };
   }
 
@@ -58,7 +58,7 @@ class Dashboard extends Component {
           fixed
           changeColorOnScroll={{
             height: 200,
-            color: 'rose'
+            color: 'rose',
           }}
           {...rest}
         />

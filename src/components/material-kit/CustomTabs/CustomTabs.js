@@ -18,7 +18,7 @@ import customTabsStyle from '../material-kit-react/components/customTabsStyle.js
 
 class CustomTabs extends React.Component {
   state = {
-    value: 0
+    value: 0,
   };
 
   handleChange = (event, value) => {
@@ -29,7 +29,7 @@ class CustomTabs extends React.Component {
     const { classes, headerColor, plainTabs, tabs, title, rtlActive } = this.props;
     const cardTitle = classNames({
       [classes.cardTitle]: true,
-      [classes.cardTitleRTL]: rtlActive
+      [classes.cardTitleRTL]: rtlActive,
     });
     return (
       <Card plain={plainTabs}>
@@ -40,14 +40,14 @@ class CustomTabs extends React.Component {
             onChange={this.handleChange}
             classes={{
               root: classes.tabsRoot,
-              indicator: classes.displayNone
+              indicator: classes.displayNone,
             }}
           >
             {tabs.map((prop, key) => {
               var icon = {};
               if (prop.tabIcon) {
                 icon = {
-                  icon: typeof prop.tabIcon === 'string' ? <Icon>{prop.tabIcon}</Icon> : <prop.tabIcon />
+                  icon: typeof prop.tabIcon === 'string' ? <Icon>{prop.tabIcon}</Icon> : <prop.tabIcon />,
                 };
               }
               return (
@@ -57,7 +57,7 @@ class CustomTabs extends React.Component {
                     labelContainer: classes.tabLabelContainer,
                     label: classes.tabLabel,
                     selected: classes.tabSelected,
-                    wrapper: classes.tabWrapper
+                    wrapper: classes.tabWrapper,
                   }}
                   key={key}
                   label={prop.tabName}
@@ -88,11 +88,11 @@ CustomTabs.propTypes = {
     PropTypes.shape({
       tabName: PropTypes.string.isRequired,
       tabIcon: PropTypes.func,
-      tabContent: PropTypes.node.isRequired
+      tabContent: PropTypes.node.isRequired,
     })
   ),
   rtlActive: PropTypes.bool,
-  plainTabs: PropTypes.bool
+  plainTabs: PropTypes.bool,
 };
 
 export default withStyles(customTabsStyle)(CustomTabs);

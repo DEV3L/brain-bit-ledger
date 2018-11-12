@@ -13,7 +13,7 @@ var config = {
   databaseURL: DATABASE_URL,
   projectId: PROJECT_ID,
   storageBucket: STORAGE_BUCKET,
-  messagingSenderId: MESSAGING_SENDER_ID
+  messagingSenderId: MESSAGING_SENDER_ID,
 };
 
 firebase.initializeApp(config);
@@ -21,7 +21,7 @@ firebase.initializeApp(config);
 export const authConfig = {
   email: {
     verifyOnSignup: false,
-    saveUserInDatabase: true
+    saveUserInDatabase: true,
   },
   google: {
     // scopes: ["admin.datatransfer", "contacts.readonly"], // optional
@@ -31,7 +31,7 @@ export const authConfig = {
     // redirect: true, // default is popup: true, redirect: true,
     returnAccessToken: true,
     // scopes: [], // array
-    saveUserInDatabase: true
+    saveUserInDatabase: true,
   },
   facebook: {
     // scopes: ["admin.datatransfer", "contacts.readonly"], // optional
@@ -40,20 +40,20 @@ export const authConfig = {
     // },
     redirect: true, // default is popup: true, redirect: true,
     returnAccessToken: true,
-    saveUserInDatabase: true
+    saveUserInDatabase: true,
   },
   github: {
     // redirect: true,
     returnAccessToken: true,
-    saveUserInDatabase: true
+    saveUserInDatabase: true,
   },
 
   twitter: {
     // redirect: true,
     returnAccessToken: true,
     returnSecret: true,
-    saveUserInDatabase: true
-  }
+    saveUserInDatabase: true,
+  },
 };
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();

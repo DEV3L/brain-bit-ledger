@@ -24,7 +24,7 @@ class CustomDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -58,18 +58,18 @@ class CustomDropdown extends React.Component {
       hoverColor,
       left,
       rtlActive,
-      noLiPadding
+      noLiPadding,
     } = this.props;
     const caretClasses = classNames({
       [classes.caret]: true,
       [classes.caretActive]: open,
-      [classes.caretRTL]: rtlActive
+      [classes.caretRTL]: rtlActive,
     });
     const dropdownItem = classNames({
       [classes.dropdownItem]: true,
       [classes[hoverColor + 'Hover']]: true,
       [classes.noLiPadding]: noLiPadding,
-      [classes.dropdownItemRTL]: rtlActive
+      [classes.dropdownItemRTL]: rtlActive,
     });
     let icon = null;
     switch (typeof buttonIcon) {
@@ -109,7 +109,7 @@ class CustomDropdown extends React.Component {
           placement={dropup ? (left ? 'top-start' : 'top') : left ? 'bottom-start' : 'bottom'}
           className={classNames({
             [classes.popperClose]: !open,
-            [classes.pooperResponsive]: true
+            [classes.pooperResponsive]: true,
           })}
         >
           {({ TransitionProps, placement }) => (
@@ -149,7 +149,7 @@ class CustomDropdown extends React.Component {
 
 CustomDropdown.defaultProps = {
   caret: true,
-  hoverColor: 'primary'
+  hoverColor: 'primary',
 };
 
 CustomDropdown.propTypes = {
@@ -166,7 +166,7 @@ CustomDropdown.propTypes = {
   left: PropTypes.bool,
   noLiPadding: PropTypes.bool,
   // function that retuns the selected item
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 export default withStyles(customDropdownStyle)(CustomDropdown);
